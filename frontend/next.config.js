@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Static export for Amplify hosting
+  output: 'export',
+  trailingSlash: true,
   images: {
     domains: ['localhost'],
     remotePatterns: [
