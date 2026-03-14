@@ -11,6 +11,7 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: true
   },
   env: {
     NEXT_PUBLIC_APP_NAME: 'ZimRentals',
