@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export const dynamic = 'force-static'
+export const revalidate = 86400
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ params: string[] }> }
