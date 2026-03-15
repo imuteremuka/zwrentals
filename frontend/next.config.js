@@ -4,6 +4,7 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   outputFileTracingRoot: __dirname, // ensures Next.js sees correct project root
+  distDir: 'out', // Explicitly set output directory
   images: {
     domains: ['localhost'],
     remotePatterns: [
