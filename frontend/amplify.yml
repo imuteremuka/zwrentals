@@ -2,18 +2,16 @@ version: 1
 applications:
   - appRoot: frontend
     frontend:
-      framework: none
+      framework: none        # Next.js 15 static export
       phases:
         preBuild:
           commands:
             - npm ci
         build:
           commands:
-            - rm -rf src/app/api
-            - npm run build
-            - npm run export        # ensure static export happens
+            - npm run build     # generates static export automatically (out/)
       artifacts:
-        baseDirectory: out
+        baseDirectory: out     # Next.js 15 outputs static site here
         files:
           - '**/*'
       cache:
