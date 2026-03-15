@@ -6,7 +6,8 @@ frontend:
         - npm ci --cache .npm --prefer-offline
     build:
       commands:
-        - powershell -ExecutionPolicy Bypass -File deploy.ps1
+        - rm -rf src/app/api
+        - npm run build
   artifacts:
     baseDirectory: out
     files:
