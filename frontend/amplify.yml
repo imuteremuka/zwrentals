@@ -2,7 +2,7 @@ version: 1
 applications:
   - appRoot: frontend
     frontend:
-      framework: none        # <-- important: tells Amplify this is not SSR
+      framework: none
       phases:
         preBuild:
           commands:
@@ -11,8 +11,9 @@ applications:
           commands:
             - rm -rf src/app/api
             - npm run build
+            - npm run export        # ensure static export happens
       artifacts:
-        baseDirectory: out     # <-- next export outputs here
+        baseDirectory: out
         files:
           - '**/*'
       cache:
