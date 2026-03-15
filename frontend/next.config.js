@@ -3,6 +3,7 @@ const nextConfig = {
   // Static export for Amplify hosting
   output: 'export',
   trailingSlash: true,
+  outputFileTracingRoot: __dirname, // ensures Next.js sees correct project root
   images: {
     domains: ['localhost'],
     remotePatterns: [
