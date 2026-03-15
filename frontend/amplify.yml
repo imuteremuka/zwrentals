@@ -3,7 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci --cache .npm --prefer-offline
+        - npm ci
     build:
       commands:
         - rm -rf src/app/api
@@ -11,8 +11,8 @@ frontend:
   artifacts:
     baseDirectory: out
     files:
-      - '**/*'
-    cache:
-      paths:
-        - .next/cache
-        - node_modules/.cache
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*
