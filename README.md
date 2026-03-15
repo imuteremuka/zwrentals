@@ -61,3 +61,9 @@ git checkout -b feature/user-authentication
 git add .
 git commit -m "Add authentication endpoint"
 
+# Push Branch to GitHub
+
+Push your branch to the remote repository.
+
+git push origin feature/user-authentication
+
