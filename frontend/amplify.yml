@@ -12,8 +12,8 @@ frontend:
   artifacts:
     baseDirectory: frontend/out
     files:
-      - "**/*"
+      - '**/*'
   cache:
     paths:
-      - frontend/node_modules/**/*
-      - .next/cache/**/*
+      - frontend/node_modules/.cache
+      - frontend/.next/cache
