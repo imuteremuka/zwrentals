@@ -11,10 +11,10 @@ applications:
             - rm -rf src/app/api
             - npm run build
       artifacts:
-        baseDirectory: out
+        baseDirectory: out   # matches 'next export' output
         files:
           - '**/*'
       cache:
         paths:
-          - node_modules/**/*
-          - .next/cache/**/*
+          - node_modules/**/*   # cache all node modules
+          - .next/cache/**/*   # cache Next.js build artifacts
