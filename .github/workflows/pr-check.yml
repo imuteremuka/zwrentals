@@ -1,0 +1,14 @@
+name: PR Quality Check
+on:
+  pull_request:
+    branches: [ "dev", "release" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: cd frontend && npm ci
+      - name: Run Build Check
+        run: cd frontend && npm run build
