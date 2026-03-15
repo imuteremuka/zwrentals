@@ -3,6 +3,21 @@ import { NextRequest, NextResponse } from 'next/server'
 export const dynamic = 'force-static'
 export const revalidate = 86400
 
+export async function generateStaticParams() {
+  // Generate common placeholder sizes
+  const sizes = [
+    ['400', '300'],
+    ['800', '600'],
+    ['1200', '900'],
+    ['200', '200'],
+    ['100', '100']
+  ]
+  
+  return sizes.map(([width, height]) => ({
+    params: [width, height]
+  }))
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ params: string[] }> }
