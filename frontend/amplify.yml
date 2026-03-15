@@ -2,6 +2,7 @@ version: 1
 applications:
   - appRoot: frontend
     frontend:
+      framework: none        # <-- important: tells Amplify this is not SSR
       phases:
         preBuild:
           commands:
@@ -11,10 +12,10 @@ applications:
             - rm -rf src/app/api
             - npm run build
       artifacts:
-        baseDirectory: out   # matches 'next export' output
+        baseDirectory: out     # <-- next export outputs here
         files:
           - '**/*'
       cache:
         paths:
-          - node_modules/**/*   # cache all node modules
-          - .next/cache/**/*   # cache Next.js build artifacts
+          - node_modules/**/*
+          - .next/cache/**/*
